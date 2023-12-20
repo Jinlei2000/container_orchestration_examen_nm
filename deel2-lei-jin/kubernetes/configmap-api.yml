@@ -1,0 +1,15 @@
+# configmap-api.yml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-configmap
+  namespace: exam-leijin
+data:
+  NAME: Lei Jin
+  DATE: 2020-12-23
+  config.json: |
+    {
+       "api_host": "api",
+       "api_port": 80,
+       "name": "Lei Jin"
+     }

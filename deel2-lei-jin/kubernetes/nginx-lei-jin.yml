@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: exam-nginx
+  labels:
+    app: container-orchestration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: container-orchestration
+  template:
+    metadata:
+      labels:
+        app: container-orchestration
+    spec:
+      containers:
+        - name: nginx
+          # image: nginx:1.14.2
+          image: nathansegers/vue-docker:v2.0.0
+          ports:
+            - containerPort: 80
